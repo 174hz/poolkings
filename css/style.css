@@ -270,9 +270,31 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* ⭐ UPDATED SELECTION STYLE — GREEN TICK ⭐ */
 .pick-option.selected {
-  border-color: #F59E0B;
-  background: rgba(245, 158, 11, 0.08);
+  background-color: #ECFDF5;       /* soft green */
+  border-color: #22C55E;           /* green border */
+  color: #065F46;                  /* deep green text */
+  position: relative;
+  font-weight: 600;
+}
+
+.pick-option.selected::after {
+  content: "✔";
+  color: #22C55E;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Optional: nicer hover */
+.pick-option:hover {
+  border-color: #22C55E;
+  background-color: #F0FDF4;
+  color: #065F46;
 }
 
 .pick-summary {
