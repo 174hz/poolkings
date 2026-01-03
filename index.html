@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PoolKings | Free Skill-Based Sports Pools</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">POOLKINGS</div>
+  <nav class="main-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="pools.html">Pools</a>
+    <a href="advertise.html">Advertise</a>
+    <a href="rules.html">Official Rules</a>
+  </nav>
+</header>
+
+<main class="main-content">
+
+  <section class="hero">
+    <div class="hero-main">
+      <div class="badge">Free · Skill-Based · No Purchase Necessary</div>
+      <h1>Make your picks. Climb the leaderboard. Rule the pool.</h1>
+      <p>
+        PoolKings lets sports fans compete in free, skill-based prediction pools —
+        from outright winners to totals and first-to-score markets — with prizes on the line,
+        and no entry fees ever.
+      </p>
+      <div class="btn-row">
+        <a href="pools.html" class="btn-primary">View live pools</a>
+        <a href="advertise.html" class="btn-secondary">Advertise with us</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Tonight’s featured pool</h3>
+      <div id="featured-pool">
+        <!-- Populated by js/main.js from pools.js -->
+      </div>
+      <div class="ad-slot">
+        <!-- AdSense / Taboola top-of-page slot -->
+        Ad placement (728x90 / 320x100)
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How PoolKings works</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>1. Pick a pool</h3>
+        <p>Browse live pools across major leagues and events. Each pool shows markets like winner, totals, and first to score.</p>
+      </div>
+      <div class="card">
+        <h3>2. Make your selections</h3>
+        <p>Lock in your picks before the deadline. Your score is based purely on prediction accuracy — no randomness, no betting.</p>
+      </div>
+      <div class="card">
+        <h3>3. Track results</h3>
+        <p>Follow real-world outcomes, see how your picks stack up, and climb the leaderboard as games go final.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Live & upcoming pools</h2>
+    <p>Here’s a sample of what’s live right now. Dive into the full list to see every pool you can join.</p>
+    <div id="home-pool-list" class="pool-list">
+      <!-- Populated by js/main.js from pools.js -->
+    </div>
+    <div style="margin-top:16px;">
+      <a href="pools.html" class="btn-secondary">View all pools</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="ad-slot">
+      <!-- Mid-page content ad block -->
+      Ad placement (responsive in-content / Taboola widget)
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <a href="privacy.html">Privacy</a> ·
+  <a href="terms.html">Terms</a> ·
+  <a href="rules.html">Official Rules</a> ·
+  <a href="advertise.html">Advertise</a>
+</footer>
+
+<script src="js/pools.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
 
