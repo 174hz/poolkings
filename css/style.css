@@ -268,17 +268,26 @@ a:hover {
   border: 1px solid #374151;
   cursor: pointer;
   font-size: 0.9rem;
+  transition: transform 0.08s ease-out;
 }
 
-/* ⭐ UPDATED SELECTION STYLE — GREEN TICK ⭐ */
+/* Press animation */
+.pick-option:active {
+  transform: scale(0.96);
+}
+
+/* Selected state with glow */
 .pick-option.selected {
-  background-color: #ECFDF5;       /* soft green */
-  border-color: #22C55E;           /* green border */
-  color: #065F46;                  /* deep green text */
+  background-color: #ECFDF5;
+  border-color: #22C55E;
+  color: #065F46;
   position: relative;
   font-weight: 600;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.45);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
+/* Fade‑in tick */
 .pick-option.selected::after {
   content: "✔";
   color: #22C55E;
@@ -288,13 +297,28 @@ a:hover {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+  opacity: 0;
+  animation: tickFade 0.25s ease forwards;
 }
 
-/* Optional: nicer hover */
+/* Tick fade‑in animation */
+@keyframes tickFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Hover enhancement */
 .pick-option:hover {
   border-color: #22C55E;
   background-color: #F0FDF4;
   color: #065F46;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.35);
 }
 
 .pick-summary {
@@ -377,4 +401,3 @@ a:hover {
     margin-right: 12px;
   }
 }
-
