@@ -5,7 +5,30 @@ function getQueryParam(name) {
   return params.get(name);
 }
 
-function buildPicksForm(pool) {
+function savePicksToLocal(poolId, state) {
+  const raw = localStorage.getItem("pk_saved_picks");
+  let arr = [];
+  if (raw) {
+    try {
+      arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) arr = [];
+    } catch (e) {
+      arr = [];
+    }
+  }
+  const entry = {
+    poolId: Number(poolId),
+    winner: state.winner,
+    total: state.total,
+    firstToScore: state.firstToScore,
+    timestamp: new Date().toISOString()
+  };
+  arr = arr.filter(x => x.poolId !== entry.poolId);
+  arr.push(entry);
+  localStorage.setItem("pk_saved_picks", JSON.stringify(arr));
+}
+
+function buildPicksForm(pool, poolId) {
   const container = document.getElementById("picks-form");
   const summaryBody = document.getElementById("pick-summary-body");
   if (!container || !summaryBody) return;
@@ -63,7 +86,6 @@ function buildPicksForm(pool) {
     const value = btn.getAttribute("data-value");
     if (!group || !value) return;
 
-    // clear selection in this group
     container.querySelectorAll(`.pick-option[data-group="${group}"]`).forEach(b => {
       b.classList.remove("selected");
     });
@@ -87,8 +109,8 @@ function buildPicksForm(pool) {
         return;
       }
 
-      // For now, simulate a saved pick. Later we can wire up to backend/auth.
-      statusEl.textContent = "Your picks are locked in for this pool. Good luck ruling the board.";
+      savePicksToLocal(poolId, state);
+      statusEl.textContent = "Your picks are locked in for this pool and saved under My Picks.";
       statusEl.style.color = "#22C55E";
     });
   }
@@ -112,6 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
     metaEl.textContent = `${pool.league} · ${pool.awayTeam} @ ${pool.homeTeam} · Deadline: ${new Date(pool.deadline).toLocaleString()}`;
   }
 
-  buildPicksForm(pool);
+  buildPicksForm(pool, pool.id);
 });
-
