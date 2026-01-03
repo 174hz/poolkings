@@ -244,30 +244,41 @@ a:hover {
 
 .picks-layout {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
 .pick-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .pick-group h3 {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
 }
 
 .pick-options {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* ===== FanDuel-style buttons ===== */
+
 .pick-option {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid #374151;
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  border-radius: 999px; /* soft pill */
+  border: 1px solid #D1D5DB;
+  background-color: #F3F4F6; /* light gray */
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
@@ -283,9 +294,9 @@ a:hover {
 
 /* Selected = full green button */
 .pick-option.selected {
-  background-color: #22C55E;     /* green */
-  border-color: #22C55E;         /* green border */
-  color: #111827;                /* dark text */
+  background-color: #22C55E;
+  border-color: #22C55E;
+  color: #111827;
   font-weight: 600;
   box-shadow: 0 0 10px rgba(34, 197, 94, 0.55);
 }
@@ -293,8 +304,8 @@ a:hover {
 /* Hover enhancement */
 .pick-option:hover {
   border-color: #22C55E;
-  background-color: rgba(34, 197, 94, 0.15);
-  color: #22C55E;
+  background-color: #E3FFE9;
+  color: #065F46;
 }
 
 .pick-summary {
@@ -361,8 +372,7 @@ a:hover {
 /* ====== Responsive ====== */
 
 @media (max-width: 768px) {
-  .hero,
-  .picks-layout {
+  .hero {
     grid-template-columns: 1fr;
   }
 
@@ -375,6 +385,19 @@ a:hover {
   .main-nav a {
     margin-left: 0;
     margin-right: 12px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .pool-list {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .pool-card {
+    padding: 12px;
   }
 }
 
