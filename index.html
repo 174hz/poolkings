@@ -6,13 +6,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header class="site-header">
-  <div class="logo">POOLKINGS</div>
+  <div class="logo">👑 POOLKINGS</div>
   <nav class="main-nav">
     <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
     <a href="pools.html">Pools</a>
-    <a href="advertise.html">Advertise</a>
+    <a href="mypicks.html">My Picks</a>
+    <a href="leaderboard.html">Leaderboard</a>
     <a href="rules.html">Official Rules</a>
+    <a href="#" id="signup-btn" class="btn-secondary" style="margin-left:16px;">Sign Up</a>
   </nav>
 </header>
 
@@ -23,13 +27,12 @@
       <div class="badge">Free · Skill-Based · No Purchase Necessary</div>
       <h1>Make your picks. Climb the leaderboard. Rule the pool.</h1>
       <p>
-        PoolKings lets sports fans compete in free, skill-based prediction pools —
-        from outright winners to totals and first-to-score markets — with prizes on the line,
-        and no entry fees ever.
+        PoolKings exists to make sports prediction fun, free, and accessible to everyone — giving fans a fair, 
+        skill-based alternative to gambling apps.
       </p>
       <div class="btn-row">
         <a href="pools.html" class="btn-primary">View live pools</a>
-        <a href="advertise.html" class="btn-secondary">Advertise with us</a>
+        <a href="about.html" class="btn-secondary">Learn how it works</a>
       </div>
     </div>
     <div class="hero-card">
@@ -38,7 +41,6 @@
         <!-- Populated by js/main.js from pools.js -->
       </div>
       <div class="ad-slot">
-        <!-- AdSense / Taboola top-of-page slot -->
         Ad placement (728x90 / 320x100)
       </div>
     </div>
@@ -75,7 +77,6 @@
 
   <section class="section">
     <div class="ad-slot">
-      <!-- Mid-page content ad block -->
       Ad placement (responsive in-content / Taboola widget)
     </div>
   </section>
@@ -89,8 +90,17 @@
   <a href="advertise.html">Advertise</a>
 </footer>
 
+<div id="signup-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Join PoolKings</h2>
+    <p>Enter your email to save picks and join pools.</p>
+    <input type="email" id="signup-email" placeholder="you@example.com">
+    <button id="signup-submit" class="btn-primary" style="margin-top:12px;">Sign Up</button>
+    <p id="signup-status" style="margin-top:8px; font-size:0.85rem;"></p>
+  </div>
+</div>
+
 <script src="js/pools.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
-
