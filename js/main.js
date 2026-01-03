@@ -82,11 +82,57 @@ function renderAllPoolsList() {
   }).join("");
 }
 
-// Init per-page
+// ====== Simple email capture / sign-up ======
+
+function initSignup() {
+  const signupBtn = document.getElementById("signup-btn");
+  const modal = document.getElementById("signup-modal");
+  const submitBtn = document.getElementById("signup-submit");
+  const emailInput = document.getElementById("signup-email");
+  const statusEl = document.getElementById("signup-status");
+
+  if (!signupBtn || !modal || !submitBtn || !emailInput || !statusEl) return;
+
+  const savedEmail = localStorage.getItem("pk_user_email");
+  if (savedEmail) {
+    signupBtn.textContent = savedEmail;
+    signupBtn.classList.add("active");
+    signupBtn.style.pointerEvents = "none";
+  } else {
+    signupBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.remove("hidden");
+    });
+  }
+
+  submitBtn.addEventListener("click", () => {
+    const email = emailInput.value.trim();
+    if (!email || !email.includes("@")) {
+      statusEl.textContent = "Please enter a valid email.";
+      statusEl.style.color = "#F97316";
+      return;
+    }
+
+    localStorage.setItem("pk_user_email", email);
+    statusEl.textContent = "You're signed up! Welcome to PoolKings.";
+    statusEl.style.color = "#22C55E";
+
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      signupBtn.textContent = email;
+      signupBtn.classList.add("active");
+      signupBtn.style.pointerEvents = "none";
+    }, 800);
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   renderFeaturedPool();
   renderHomePoolList();
   renderAllPoolsList();
+  initSignup();
 });
-
