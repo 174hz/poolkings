@@ -6,13 +6,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header class="site-header">
-  <div class="logo">POOLKINGS</div>
+  <div class="logo">👑 POOLKINGS</div>
   <nav class="main-nav">
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="pools.html" class="active">Pools</a>
-    <a href="advertise.html">Advertise</a>
+    <a href="mypicks.html">My Picks</a>
+    <a href="leaderboard.html">Leaderboard</a>
     <a href="rules.html">Official Rules</a>
+    <a href="#" id="signup-btn" class="btn-secondary" style="margin-left:16px;">Sign Up</a>
   </nav>
 </header>
 
@@ -22,7 +26,6 @@
     <p>Browse free, skill-based pools. Click into a pool to make your picks and compete for prizes — no purchase necessary.</p>
 
     <div class="ad-slot">
-      <!-- List page header ad block -->
       Ad placement (leaderboard / native)
     </div>
 
@@ -31,7 +34,6 @@
     </div>
 
     <div class="ad-slot">
-      <!-- Below-list ad block -->
       Ad placement (responsive in-content / Taboola widget)
     </div>
   </section>
@@ -40,11 +42,21 @@
 <footer class="site-footer">
   <a href="privacy.html">Privacy</a> ·
   <a href="terms.html">Terms</a> ·
-  <a href="rules.html">Official Rules</a>
+  <a href="rules.html">Official Rules</a> ·
+  <a href="advertise.html">Advertise</a>
 </footer>
+
+<div id="signup-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Join PoolKings</h2>
+    <p>Enter your email to save picks and join pools.</p>
+    <input type="email" id="signup-email" placeholder="you@example.com">
+    <button id="signup-submit" class="btn-primary" style="margin-top:12px;">Sign Up</button>
+    <p id="signup-status" style="margin-top:8px; font-size:0.85rem;"></p>
+  </div>
+</div>
 
 <script src="js/pools.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
-
