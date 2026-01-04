@@ -10,8 +10,8 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #020617; /* deep dark */
-  color: #E5E7EB; /* light gray */
+  background-color: #020617;
+  color: #E5E7EB;
 }
 
 body {
@@ -245,16 +245,27 @@ a:hover {
 .picks-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
 }
 
-.pick-group {
-  margin-bottom: 24px;
+.game-block {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #1F2937;
+  background: #0B1120;
+  animation: fadeIn 0.4s ease;
 }
 
-.pick-group h3 {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
+.game-block + .game-block {
+  margin-top: 24px;
+}
+
+.market-title {
+  margin: 24px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #1F2937;
+  font-size: 1rem;
+  color: #9CA3AF;
 }
 
 .pick-options {
@@ -269,9 +280,9 @@ a:hover {
   width: 100%;
   height: 60px;
   padding: 0 16px;
-  border-radius: 999px; /* soft pill */
+  border-radius: 999px;
   border: 1px solid #D1D5DB;
-  background-color: #F3F4F6; /* light gray */
+  background-color: #F3F4F6;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -284,89 +295,69 @@ a:hover {
     border-color 0.25s ease,
     color 0.25s ease,
     box-shadow 0.25s ease,
-    transform 0.08s ease-out;
+    transform 0.1s ease-out;
 }
 
-/* Press animation */
 .pick-option:active {
   transform: scale(0.96);
 }
 
-/* Selected = full green button */
 .pick-option.selected {
-  background-color: #22C55E;
-  border-color: #22C55E;
+  background-color: #16A34A;
+  border-color: #16A34A;
   color: #111827;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.55);
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.55);
+  transform: scale(1.02);
 }
 
-/* Hover enhancement */
 .pick-option:hover {
-  border-color: #22C55E;
+  border-color: #16A34A;
   background-color: #E3FFE9;
   color: #065F46;
 }
 
-.pick-summary {
-  background: #020617;
-  border-radius: 12px;
-  border: 1px solid #111827;
-  padding: 16px;
-}
+/* ===== Sticky Submit Button ===== */
 
-.pick-summary-row {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-
-.pick-submit {
-  margin-top: 16px;
-}
-
-/* ====== Ad blocks ====== */
-
-.ad-slot {
-  margin: 24px 0;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px dashed #374151;
-  background: #020617;
-  font-size: 0.8rem;
-  color: #6B7280;
+.sticky-submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #16A34A;
+  color: #111827;
+  font-weight: 700;
   text-align: center;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  border-top: 1px solid #065F46;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.2s ease;
 }
 
-/* ====== Legal pages ====== */
-
-.legal-page {
-  max-width: 800px;
-  margin: 0 auto;
+.sticky-submit:hover {
+  background: #17B34F;
 }
 
-.legal-page h1 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
+/* Desktop floating pill */
+@media (min-width: 769px) {
+  .sticky-submit {
+    width: auto;
+    padding: 14px 28px;
+    border-radius: 999px;
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
 }
 
-.legal-page h2 {
-  margin-top: 24px;
-  font-size: 1.2rem;
-}
+/* ===== Animations ===== */
 
-.legal-page h3 {
-  margin-top: 16px;
-  font-size: 1rem;
-}
-
-.legal-page p,
-.legal-page li {
-  color: #9CA3AF;
-  line-height: 1.5;
-}
-
-.legal-page ul {
-  padding-left: 20px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ====== Responsive ====== */
@@ -400,4 +391,3 @@ a:hover {
     padding: 12px;
   }
 }
-
