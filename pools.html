@@ -9,43 +9,44 @@
 
 <body>
 
-  <!-- ===== Site Header ===== -->
-  <header class="site-header">
-    <div class="logo">👑 POOLKINGS</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="pools-list.html" class="active">Pools</a>
-      <a href="mypicks.html">My Picks</a>
-      <a href="leaderboard.html">Leaderboard</a>
-    </nav>
-  </header>
+<header class="site-header">
+  <div class="logo">👑 POOLKINGS</div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="pools-list.html" class="active">Pools</a>
+    <a href="mypicks.html">My Picks</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </nav>
+</header>
 
-  <!-- ===== Main Content ===== -->
-  <main class="main-content">
+<main class="main-content">
 
-    <!-- Sticky pool header -->
-    <div class="pool-header-sticky">
-      <div id="pool-title" class="pool-header-title"></div>
-      <div id="pool-meta" class="pool-header-meta"></div>
-    </div>
+  <!-- Floating Back Button -->
+  <a href="pools-list.html" class="back-to-pools">← Back to Pools</a>
 
-    <!-- Dynamic game rows will be injected here -->
-    <div id="games-slate"></div>
+  <!-- Sticky Header -->
+  <div class="pool-header-sticky">
+    <div id="pool-title" class="pool-header-title"></div>
+    <div id="pool-meta" class="pool-header-meta"></div>
+    <div id="pool-countdown" class="pool-countdown"></div>
+  </div>
 
-    <!-- Submit + status -->
-    <div id="submit-status" class="pick-summary-row"></div>
-    <button id="submit-pool-picks" class="sticky-submit">Submit all picks</button>
+  <div id="games-slate"></div>
 
-  </main>
+  <div id="submit-status" class="pick-summary-row"></div>
+  <button id="submit-pool-picks" class="sticky-submit">Submit all picks</button>
 
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    © 2026 PoolKings. All rights reserved.
-  </footer>
+</main>
 
-  <!-- ===== Scripts ===== -->
-  <script src="js/pools.js"></script>
-  <script src="js/pool-multi.js"></script>
+<footer class="site-footer">
+  © 2026 PoolKings. All rights reserved.
+</footer>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="js/pools.js"></script>
+<script src="js/pool-multi.js"></script>
 
 </body>
 </html>
