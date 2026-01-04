@@ -1,80 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Make Your Picks | PoolKings</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<div class="game-row" data-game-id="game-1">
 
-<header class="site-header">
-  <div class="logo">👑 POOLKINGS</div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="pools.html">Pools</a>
-    <a href="mypicks.html">My Picks</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="rules.html">Official Rules</a>
-    <a href="#" id="signup-btn" class="btn-secondary" style="margin-left:16px;">Sign Up</a>
-  </nav>
-</header>
+  <div class="game-info">
+    <div class="game-title">Montreal @ Toronto</div>
+    <div class="game-meta">Sat 7:00 PM ET</div>
+  </div>
 
-<main class="main-content">
-  <section class="section">
-    <div class="picks-layout">
-      <div>
-        <h2 id="pool-title">Make your picks</h2>
-        <p id="pool-meta" style="color:#9CA3AF; font-size:0.9rem;"></p>
-
-        <div class="ad-slot">
-          Ad placement (728x90 / 320x100)
-        </div>
-
-        <div id="picks-form">
-          <!-- Populated by js/picks.js using pools.js -->
-        </div>
-      </div>
-
-      <aside>
-        <div class="pick-summary">
-          <h3>Your selections</h3>
-          <div id="pick-summary-body"></div>
-          <div class="pick-submit">
-            <button id="submit-picks" class="btn-primary" type="button">Lock in my picks</button>
-            <p id="submit-status" style="font-size:0.85rem; color:#9CA3AF; margin-top:8px;"></p>
-          </div>
-        </div>
-
-        <div class="ad-slot" style="margin-top:24px;">
-          Ad placement (300x250 / 300x600)
-        </div>
-      </aside>
+  <div class="game-scroll">
+    
+    <!-- Winner -->
+    <div class="market-group">
+      <div class="market-label">Winner</div>
+      <button class="pick-option" data-market="winner" data-value="toronto">Toronto</button>
+      <button class="pick-option" data-market="winner" data-value="montreal">Montreal</button>
     </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  <a href="privacy.html">Privacy</a> ·
-  <a href="terms.html">Terms</a> ·
-  <a href="rules.html">Official Rules</a> ·
-  <a href="advertise.html">Advertise</a>
-</footer>
+    <!-- Total -->
+    <div class="market-group">
+      <div class="market-label">Total 6.5</div>
+      <button class="pick-option" data-market="total" data-value="over">Over</button>
+      <button class="pick-option" data-market="total" data-value="under">Under</button>
+    </div>
 
-<div id="signup-modal" class="modal hidden">
-  <div class="modal-content">
-    <h2>Join PoolKings</h2>
-    <p>Enter your email to save picks and join pools.</p>
-    <input type="email" id="signup-email" placeholder="you@example.com">
-    <button id="signup-submit" class="btn-primary" style="margin-top:12px;">Sign Up</button>
-    <p id="signup-status" style="margin-top:8px; font-size:0.85rem;"></p>
+    <!-- First to Score -->
+    <div class="market-group">
+      <div class="market-label">First to Score</div>
+      <button class="pick-option" data-market="first" data-value="toronto">Toronto</button>
+      <button class="pick-option" data-market="first" data-value="montreal">Montreal</button>
+      <button class="pick-option" data-market="first" data-value="none">No Goal</button>
+    </div>
+
   </div>
 </div>
-
-<script src="js/pools.js"></script>
-<script src="js/picks.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html>
 
       
