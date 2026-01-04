@@ -514,6 +514,117 @@ a:hover {
   }
 }
 
+/* ========================================================= */
+/* === NEW FEATURES ADDED BELOW ============================ */
+/* ========================================================= */
+
+/* Sticky Pool Header */
+.pool-header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #020617;
+  padding: 12px 0 10px;
+  border-bottom: 1px solid #111827;
+}
+
+.pool-header-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pool-sport-icon {
+  font-size: 1.3rem;
+}
+
+.pool-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+.pool-status-live {
+  background: rgba(220, 38, 38, 0.2);
+  color: #FCA5A5;
+}
+
+.pool-status-upcoming {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93C5FD;
+}
+
+.pool-header-meta {
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  margin-top: 2px;
+}
+
+/* Countdown Timer */
+.pool-countdown {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #FBBF24;
+}
+
+/* Team Logos */
+.team-logo {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Game Separator */
+.game-separator {
+  height: 1px;
+  background: #1F2937;
+  margin: 20px 0;
+}
+
+/* Back to Pools Floating Button */
+.back-to-pools {
+  position: fixed;
+  top: 90px;
+  left: 20px;
+  background: #1F2937;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #E5E7EB;
+  font-size: 0.9rem;
+  border: 1px solid #374151;
+  z-index: 100;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #16A34A;
+  color: #111827;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.toast.hidden {
+  display: none;
+}
+
 /* Force selected state to override all other button styles */
 .pick-option.selected {
   background-color: #16A34A !important;
