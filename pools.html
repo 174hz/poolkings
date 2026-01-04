@@ -10,32 +10,31 @@
 <body>
 
   <!-- ===== Site Header ===== -->
-<header class="site-header">
-  <div class="logo">👑 POOLKINGS</div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="pools-list.html" class="active">Pools</a>
-    <a href="mypicks.html">My Picks</a>
-    <a href="leaderboard.html">Leaderboard</a>
-  </nav>
-</header>
-
+  <header class="site-header">
+    <div class="logo">👑 POOLKINGS</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="pools-list.html" class="active">Pools</a>
+      <a href="mypicks.html">My Picks</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </header>
 
   <!-- ===== Main Content ===== -->
   <main class="main-content">
 
-    <div id="pool-wrapper">
-
-      <h1 id="pool-title"></h1>
-      <p id="pool-meta"></p>
-
-      <!-- Dynamic game rows will be injected here -->
-      <div id="games-slate"></div>
-
-      <div id="submit-status" class="pick-summary-row"></div>
-      <button id="submit-pool-picks" class="sticky-submit">Submit all picks</button>
-
+    <!-- Sticky pool header -->
+    <div class="pool-header-sticky">
+      <div id="pool-title" class="pool-header-title"></div>
+      <div id="pool-meta" class="pool-header-meta"></div>
     </div>
+
+    <!-- Dynamic game rows will be injected here -->
+    <div id="games-slate"></div>
+
+    <!-- Submit + status -->
+    <div id="submit-status" class="pick-summary-row"></div>
+    <button id="submit-pool-picks" class="sticky-submit">Submit all picks</button>
 
   </main>
 
