@@ -240,7 +240,7 @@ a:hover {
   margin-right: 6px;
 }
 
-/* ====== Picks page ====== */
+/* ====== Picks page (old vertical layout — now deprecated) ====== */
 
 .picks-layout {
   display: grid;
@@ -391,3 +391,76 @@ a:hover {
     padding: 12px;
   }
 }
+
+/* ========================================================= */
+/* === NEW PROLINE‑STYLE HORIZONTAL GAME ROW LAYOUT BELOW === */
+/* ========================================================= */
+
+.game-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #1F2937;
+  gap: 16px;
+}
+
+.game-info {
+  min-width: 140px;
+}
+
+.game-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.game-meta {
+  font-size: 0.8rem;
+  color: #9CA3AF;
+}
+
+/* Scrollable markets */
+.game-scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.market-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+
+.market-label {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+}
+
+/* Pill buttons */
+.game-row .pick-option {
+  width: auto;
+  height: auto;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .game-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-info {
+    margin-bottom: 8px;
+  }
+
+  .game-scroll {
+    width: 100%;
+  }
+}
+
