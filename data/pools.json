@@ -12,7 +12,7 @@
         "awayTeam": "Montreal",
         "startTime": "Sat 7:00 PM ET",
         "totalLine": 6.5,
-        "firstToScoreOptions": ["Toronto", "Montreal", "No Goal First Period"]
+        "firstToScoreOptions": ["Toronto", "Montreal"]
       }
     ]
   },
@@ -29,7 +29,7 @@
         "awayTeam": "San Francisco",
         "startTime": "Sun 4:25 PM ET",
         "totalLine": 47.5,
-        "firstToScoreOptions": ["Dallas", "San Francisco", "Defensive/Special Teams"]
+        "firstToScoreOptions": ["Dallas", "San Francisco"]
       }
     ]
   },
@@ -46,9 +46,8 @@
         "awayTeam": "Warriors",
         "startTime": "Sun 8:30 PM ET",
         "totalLine": 231.5,
-        "firstToScoreOptions": ["Lakers", "Warriors", "No FG in first minute"]
+        "firstToScoreOptions": ["Lakers", "Warriors"]
       }
     ]
   }
 ]
-
