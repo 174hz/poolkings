@@ -6,11 +6,15 @@
     "league": "NHL",
     "status": "Live",
     "deadline": "2026-01-10T19:00:00Z",
-    "homeTeam": "Toronto",
-    "awayTeam": "Montreal",
-    "totalLine": 6.5,
-    "firstToScoreOptions": ["Toronto", "Montreal", "No Goal First Period"],
-    "markets": ["Winner", "Over/Under", "First to Score"]
+    "games": [
+      {
+        "homeTeam": "Toronto",
+        "awayTeam": "Montreal",
+        "startTime": "Sat 7:00 PM ET",
+        "totalLine": 6.5,
+        "firstToScoreOptions": ["Toronto", "Montreal", "No Goal First Period"]
+      }
+    ]
   },
   {
     "id": 2,
@@ -19,11 +23,15 @@
     "league": "NFL",
     "status": "Upcoming",
     "deadline": "2026-01-11T21:25:00Z",
-    "homeTeam": "Dallas",
-    "awayTeam": "San Francisco",
-    "totalLine": 47.5,
-    "firstToScoreOptions": ["Dallas", "San Francisco", "Defensive/Special Teams"],
-    "markets": ["Winner", "Over/Under", "First to Score"]
+    "games": [
+      {
+        "homeTeam": "Dallas",
+        "awayTeam": "San Francisco",
+        "startTime": "Sun 4:25 PM ET",
+        "totalLine": 47.5,
+        "firstToScoreOptions": ["Dallas", "San Francisco", "Defensive/Special Teams"]
+      }
+    ]
   },
   {
     "id": 3,
@@ -32,11 +40,15 @@
     "league": "NBA",
     "status": "Upcoming",
     "deadline": "2026-01-12T01:30:00Z",
-    "homeTeam": "Lakers",
-    "awayTeam": "Warriors",
-    "totalLine": 231.5,
-    "firstToScoreOptions": ["Lakers", "Warriors", "No FG in first minute"],
-    "markets": ["Winner", "Over/Under", "First to Score"]
+    "games": [
+      {
+        "homeTeam": "Lakers",
+        "awayTeam": "Warriors",
+        "startTime": "Sun 8:30 PM ET",
+        "totalLine": 231.5,
+        "firstToScoreOptions": ["Lakers", "Warriors", "No FG in first minute"]
+      }
+    ]
   }
 ]
 
