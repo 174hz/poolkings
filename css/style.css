@@ -199,7 +199,7 @@ a:hover {
   margin-top: 6px;
 }
 
-/* ====== Pools listing ====== */
+/* ====== Pools listing (OLD) ====== */
 
 .pool-list {
   margin-top: 16px;
@@ -340,7 +340,6 @@ a:hover {
   background: #17B34F;
 }
 
-/* Desktop floating pill */
 @media (min-width: 769px) {
   .sticky-submit {
     width: auto;
@@ -393,6 +392,60 @@ a:hover {
 }
 
 /* ========================================================= */
+/* === NEW POOLS LIST PAGE STYLES ========================== */
+/* ========================================================= */
+
+.pools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.pool-card {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid #111827;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pool-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #E5E7EB;
+}
+
+.pool-card-meta {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.pool-card-deadline {
+  font-size: 13px;
+  color: #9CA3AF;
+}
+
+.pool-card-button {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #16A34A;
+  color: #111827;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.pool-card-button:hover {
+  background: #17B34F;
+}
+
+/* ========================================================= */
 /* === NEW PROLINE‑STYLE HORIZONTAL GAME ROW LAYOUT BELOW === */
 /* ========================================================= */
 
@@ -419,7 +472,6 @@ a:hover {
   color: #9CA3AF;
 }
 
-/* Scrollable markets */
 .game-scroll {
   display: flex;
   flex-direction: row;
@@ -440,7 +492,6 @@ a:hover {
   color: #9CA3AF;
 }
 
-/* Pill buttons */
 .game-row .pick-option {
   width: auto;
   height: auto;
@@ -448,7 +499,6 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Mobile tweaks */
 @media (max-width: 768px) {
   .game-row {
     flex-direction: column;
