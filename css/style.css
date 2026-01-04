@@ -514,3 +514,12 @@ a:hover {
   }
 }
 
+/* Force selected state to override all other button styles */
+.pick-option.selected {
+  background-color: #16A34A !important;
+  border-color: #16A34A !important;
+  color: #111827 !important;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.55);
+  transform: scale(1.02);
+}
