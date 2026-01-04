@@ -1,4 +1,12 @@
-/* ====== Base ====== */
+/* =========================================================
+   POOLKINGS — PRODUCTION STYLE SHEET
+   Mobile‑first, sportsbook‑grade UI
+   Brightened palette, improved contrast, refined spacing
+   ========================================================= */
+
+/* =========================================================
+   BASE RESET & GLOBALS
+   ========================================================= */
 
 *,
 *::before,
@@ -29,7 +37,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ====== Layout ====== */
+/* =========================================================
+   SITE HEADER
+   ========================================================= */
 
 .site-header {
   background: #020617;
@@ -62,6 +72,10 @@ a:hover {
   color: #FBBF24;
 }
 
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
 .main-content {
   flex: 1;
   padding: 24px;
@@ -78,7 +92,9 @@ a:hover {
   color: #9CA3AF;
 }
 
-/* ====== Hero ====== */
+/* =========================================================
+   HERO SECTIONS (HOME PAGE)
+   ========================================================= */
 
 .hero {
   display: grid;
@@ -101,8 +117,8 @@ a:hover {
 .badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(245, 158, 11, 0.08);
-  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.12);
+  color: #FBBF24;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -156,130 +172,205 @@ a:hover {
   border: 1px solid #1F2937;
 }
 
-/* ====== Sections ====== */
+/* =========================================================
+   POOLS LIST PAGE
+   ========================================================= */
 
-.section {
-  margin-top: 40px;
-}
-
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.section p {
-  color: #9CA3AF;
-  max-width: 720px;
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.pools-list {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  margin-top: 16px;
-}
-
-/* ====== Cards ====== */
-
-.card {
-  background: #020617;
-  border-radius: 12px;
-  border: 1px solid #111827;
-  padding: 16px;
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.card-meta {
-  font-size: 0.8rem;
-  color: #9CA3AF;
-  margin-top: 6px;
-}
-
-/* ====== Pools listing (OLD) ====== */
-
-.pool-list {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  margin-top: 20px;
 }
 
 .pool-card {
-  background: #020617;
+  background: #0B1120;
   border-radius: 12px;
-  border: 1px solid #111827;
+  border: 1px solid #1F2937;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pool-card:hover {
+  background: #111827;
+  border-color: #374151;
 }
 
 .pool-card-title {
+  font-size: 18px;
   font-weight: 600;
+  color: #F3F4F6;
 }
 
 .pool-card-meta {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.pool-card-deadline {
+  font-size: 13px;
+  color: #9CA3AF;
+}
+
+.pool-card-button {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #1CC85A;
+  color: #111827;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.pool-card-button:hover {
+  background: #22D96A;
+}
+
+/* =========================================================
+   STICKY POOL HEADER (POOL DETAIL PAGE)
+   ========================================================= */
+
+.pool-header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #020617;
+  padding: 12px 0 10px;
+  border-bottom: 1px solid #111827;
+}
+
+.pool-header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pool-sport-icon {
+  font-size: 1.35rem;
+}
+
+.pool-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+.pool-status-live {
+  background: rgba(220, 38, 38, 0.25);
+  color: #FCA5A5;
+}
+
+.pool-status-upcoming {
+  background: rgba(59, 130, 246, 0.25);
+  color: #93C5FD;
+}
+
+.pool-header-meta {
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  margin-top: 2px;
+}
+
+.pool-countdown {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #FBBF24;
+}
+
+/* =========================================================
+   BACK TO POOLS FLOATING BUTTON
+   ========================================================= */
+
+.back-to-pools {
+  position: fixed;
+  top: 90px;
+  left: 20px;
+  background: #1F2937;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #E5E7EB;
+  font-size: 0.9rem;
+  border: 1px solid #374151;
+  z-index: 100;
+}
+
+/* =========================================================
+   GAME ROWS — PROLINE STYLE
+   ========================================================= */
+
+.game-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #1F2937;
+  gap: 16px;
+}
+
+.game-info {
+  min-width: 160px;
+}
+
+.game-title {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.team-logo {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.game-meta {
   font-size: 0.8rem;
   color: #9CA3AF;
 }
 
-.pool-card-footer {
-  margin-top: 8px;
+.game-scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
 }
 
-.pool-tag {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(156, 163, 175, 0.18);
+.market-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+  scroll-snap-align: start;
+}
+
+.market-label {
   font-size: 0.75rem;
-  margin-right: 6px;
-}
-
-/* ====== Picks page (old vertical layout — now deprecated) ====== */
-
-.picks-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-.game-block {
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #1F2937;
-  background: #0B1120;
-  animation: fadeIn 0.4s ease;
-}
-
-.game-block + .game-block {
-  margin-top: 24px;
-}
-
-.market-title {
-  margin: 24px 0 12px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #1F2937;
-  font-size: 1rem;
   color: #9CA3AF;
 }
 
-.pick-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* ===== FanDuel-style buttons ===== */
+/* =========================================================
+   PICK BUTTONS — FANDUEL STYLE
+   ========================================================= */
 
 .pick-option {
-  width: 100%;
-  height: 60px;
-  padding: 0 16px;
+  width: auto;
+  height: auto;
+  padding: 12px 16px;
   border-radius: 999px;
   border: 1px solid #D1D5DB;
   background-color: #F3F4F6;
@@ -298,46 +389,58 @@ a:hover {
     transform 0.1s ease-out;
 }
 
+.pick-option:hover {
+  border-color: #1CC85A;
+  background-color: #E6FFE9;
+  color: #065F46;
+}
+
 .pick-option:active {
   transform: scale(0.96);
 }
 
 .pick-option.selected {
-  background-color: #16A34A;
-  border-color: #16A34A;
-  color: #111827;
-  font-weight: 600;
-  box-shadow: 0 0 12px rgba(22, 163, 74, 0.55);
-  transform: scale(1.02);
+  background-color: #1CC85A !important;
+  border-color: #1CC85A !important;
+  color: #111827 !important;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(28, 200, 90, 0.55);
+  transform: scale(1.03);
 }
 
-.pick-option:hover {
-  border-color: #16A34A;
-  background-color: #E3FFE9;
-  color: #065F46;
+/* =========================================================
+   GAME SEPARATOR
+   ========================================================= */
+
+.game-separator {
+  height: 1px;
+  background: #1F2937;
+  margin: 20px 0;
 }
 
-/* ===== Sticky Submit Button ===== */
+/* =========================================================
+   STICKY SUBMIT BUTTON
+   ========================================================= */
 
 .sticky-submit {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #16A34A;
+  background: #1CC85A;
   color: #111827;
   font-weight: 700;
   text-align: center;
   padding: 18px 0;
   font-size: 1.1rem;
-  border-top: 1px solid #065F46;
+  border-top: 1px solid #0F8A3A;
   cursor: pointer;
   z-index: 999;
   transition: background 0.2s ease;
 }
 
 .sticky-submit:hover {
-  background: #17B34F;
+  background: #22D96A;
 }
 
 @media (min-width: 769px) {
@@ -352,14 +455,36 @@ a:hover {
   }
 }
 
-/* ===== Animations ===== */
+/* =========================================================
+   TOAST NOTIFICATIONS
+   ========================================================= */
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1CC85A;
+  color: #111827;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
 }
 
-/* ====== Responsive ====== */
+.toast.show {
+  opacity: 1;
+}
+
+.toast.hidden {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================= */
 
 @media (max-width: 768px) {
   .hero {
@@ -381,125 +506,6 @@ a:hover {
     padding: 16px;
   }
 
-  .pool-list {
-    grid-template-columns: 1fr;
-  }
-
-  .card,
-  .pool-card {
-    padding: 12px;
-  }
-}
-
-/* ========================================================= */
-/* === NEW POOLS LIST PAGE STYLES ========================== */
-/* ========================================================= */
-
-.pools-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.pool-card {
-  background: #020617;
-  border-radius: 12px;
-  border: 1px solid #111827;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.pool-card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #E5E7EB;
-}
-
-.pool-card-meta {
-  font-size: 14px;
-  color: #9CA3AF;
-}
-
-.pool-card-deadline {
-  font-size: 13px;
-  color: #9CA3AF;
-}
-
-.pool-card-button {
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: #16A34A;
-  color: #111827;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  text-align: center;
-  display: inline-block;
-  transition: background 0.2s ease;
-}
-
-.pool-card-button:hover {
-  background: #17B34F;
-}
-
-/* ========================================================= */
-/* === NEW PROLINE‑STYLE HORIZONTAL GAME ROW LAYOUT BELOW === */
-/* ========================================================= */
-
-.game-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #1F2937;
-  gap: 16px;
-}
-
-.game-info {
-  min-width: 140px;
-}
-
-.game-title {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.game-meta {
-  font-size: 0.8rem;
-  color: #9CA3AF;
-}
-
-.game-scroll {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-}
-
-.market-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 140px;
-}
-
-.market-label {
-  font-size: 0.75rem;
-  color: #9CA3AF;
-}
-
-.game-row .pick-option {
-  width: auto;
-  height: auto;
-  padding: 10px 14px;
-  white-space: nowrap;
-}
-
-@media (max-width: 768px) {
   .game-row {
     flex-direction: column;
     align-items: flex-start;
@@ -512,125 +518,4 @@ a:hover {
   .game-scroll {
     width: 100%;
   }
-}
-
-/* ========================================================= */
-/* === NEW FEATURES ADDED BELOW ============================ */
-/* ========================================================= */
-
-/* Sticky Pool Header */
-.pool-header-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: #020617;
-  padding: 12px 0 10px;
-  border-bottom: 1px solid #111827;
-}
-
-.pool-header-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.pool-sport-icon {
-  font-size: 1.3rem;
-}
-
-.pool-status-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  margin-left: 6px;
-}
-
-.pool-status-live {
-  background: rgba(220, 38, 38, 0.2);
-  color: #FCA5A5;
-}
-
-.pool-status-upcoming {
-  background: rgba(59, 130, 246, 0.18);
-  color: #93C5FD;
-}
-
-.pool-header-meta {
-  font-size: 0.85rem;
-  color: #9CA3AF;
-  margin-top: 2px;
-}
-
-/* Countdown Timer */
-.pool-countdown {
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: #FBBF24;
-}
-
-/* Team Logos */
-.team-logo {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-/* Game Separator */
-.game-separator {
-  height: 1px;
-  background: #1F2937;
-  margin: 20px 0;
-}
-
-/* Back to Pools Floating Button */
-.back-to-pools {
-  position: fixed;
-  top: 90px;
-  left: 20px;
-  background: #1F2937;
-  padding: 10px 14px;
-  border-radius: 8px;
-  color: #E5E7EB;
-  font-size: 0.9rem;
-  border: 1px solid #374151;
-  z-index: 100;
-}
-
-/* Toast Notification */
-.toast {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #16A34A;
-  color: #111827;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-}
-
-.toast.show {
-  opacity: 1;
-}
-
-.toast.hidden {
-  display: none;
-}
-
-/* Force selected state to override all other button styles */
-.pick-option.selected {
-  background-color: #16A34A !important;
-  border-color: #16A34A !important;
-  color: #111827 !important;
-  font-weight: 600;
-  box-shadow: 0 0 12px rgba(22, 163, 74, 0.55);
-  transform: scale(1.02);
 }
