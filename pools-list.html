@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Available Pools</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Pools – PoolKings</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <header class="site-header">
-    <div class="logo">PoolKings</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="pools-list.html" class="active">Pools</a>
-      <a href="leaderboard.html">Leaderboard</a>
-      <a href="mypicks.html">My Picks</a>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="logo">
+                POOLKIN<span class="crown">👑</span>GS
+            </div>
+        </div>
 
-  <main class="page-container">
-    <h1>Available Pools</h1>
-    <div id="pools-list" class="pools-list"></div>
-  </main>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pools-list.html" class="active">Pools</a>
+            <a href="my-picks.html">My Picks</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="rules.html">Official Rules</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
 
-  <script src="js/pools-list.js"></script>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <h1>Available Pools</h1>
+
+        <!-- CENTERED POOLS LIST -->
+        <div class="pools-list">
+
+            <!-- Example Pool Card -->
+            <div class="pool-card">
+                <div class="pool-card-title">NFL Sunday Pick'em</div>
+                <div class="pool-card-meta">10 Games • Free to Play</div>
+                <div class="pool-card-deadline">Deadline: Sun 1:00 PM ET</div>
+                <a href="pool.html" class="pool-card-button">View Pool</a>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-card-title">NBA Saturday Slate</div>
+                <div class="pool-card-meta">8 Games • Free to Play</div>
+                <div class="pool-card-deadline">Deadline: Sat 7:00 PM ET</div>
+                <a href="pool.html" class="pool-card-button">View Pool</a>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-card-title">NHL Night Picks</div>
+                <div class="pool-card-meta">6 Games • Free to Play</div>
+                <div class="pool-card-deadline">Deadline: Tonight 7:00 PM ET</div>
+                <a href="pool.html" class="pool-card-button">View Pool</a>
+            </div>
+
+        </div>
+
+        <!-- CENTERED SIGNUP BLOCK (NOW ABOVE FOOTER) -->
+        <div class="signup-block">
+            <h2>Join PoolKings</h2>
+            <p>Enter your email to save picks and join pools.</p>
+            <input type="email" placeholder="you@example.com" />
+            <button>Sign Up</button>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <a href="terms.html">Terms</a> •
+        <a href="privacy.html">Privacy</a> •
+        <a href="rules.html">Official Rules</a>
+        <br />
+        © 2026 PoolKings. All rights reserved.
+    </footer>
+
 </body>
 </html>
