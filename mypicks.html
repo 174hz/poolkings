@@ -1,107 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Picks | PoolKings</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Picks – PoolKings</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <header class="site-header">
-  <div class="logo">👑 POOLKINGS</div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="pools-list.html">Pools</a>
-    <a href="mypicks.html" class="active">My Picks</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="rules.html">Official Rules</a>
-    <a href="#" id="signup-btn" class="btn-secondary" style="margin-left:16px;">Sign Up</a>
-  </nav>
+    <div class="header-left">
+        <div class="logo">
+            POOLKIN<span class="crown">👑</span>GS
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pools-list.html">Pools</a>
+        <a href="my-picks.html" class="active">My Picks</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="rules.html">Official Rules</a>
+        <a href="signup.html">Sign Up</a>
+    </nav>
 </header>
 
+<div class="main-content">
 
-<main class="main-content">
-  <section class="section">
-    <h2>My Picks</h2>
-    <p>These are the picks you’ve locked in on PoolKings (stored in your browser for now).</p>
+    <h1>My Picks</h1>
+    <p>Your saved picks will appear here once you join a pool and make selections.</p>
 
-    <div class="ad-slot">
-      Ad placement (leaderboard)
-    </div>
-
-    <div id="mypicks-list">
-      <!-- Populated by inline JS using localStorage -->
-    </div>
-
-    <div class="ad-slot">
-      Ad placement (in-content)
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <a href="privacy.html">Privacy</a> ·
-  <a href="terms.html">Terms</a> ·
-  <a href="rules.html">Official Rules</a> ·
-  <a href="advertise.html">Advertise</a>
-</footer>
-
-<div id="signup-modal" class="modal hidden">
-  <div class="modal-content">
-    <h2>Join PoolKings</h2>
-    <p>Enter your email to save picks and join pools.</p>
-    <input type="email" id="signup-email" placeholder="you@example.com">
-    <button id="signup-submit" class="btn-primary" style="margin-top:12px;">Sign Up</button>
-    <p id="signup-status" style="margin-top:8px; font-size:0.85rem;"></p>
-  </div>
 </div>
 
-<script src="js/pools.js"></script>
-<script src="js/main.js"></script>
-<script>
-  // Simple My Picks renderer using localStorage data saved by picks.js
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("mypicks-list");
-    const raw = localStorage.getItem("pk_saved_picks");
-    if (!container) return;
+<footer class="site-footer">
+    <a href="terms.html">Terms</a> •
+    <a href="privacy.html">Privacy</a> •
+    <a href="rules.html">Official Rules</a>
+    <br />
+    © 2026 PoolKings. All rights reserved.
+</footer>
 
-    if (!raw) {
-      container.innerHTML = "<p style='color:#9CA3AF;'>You don’t have any saved picks yet. Visit a pool to make your first entry.</p>";
-      return;
-    }
-
-    let data;
-    try {
-      data = JSON.parse(raw);
-    } catch (e) {
-      container.innerHTML = "<p style='color:#9CA3AF;'>We couldn’t read your saved picks. Try making a new set of picks.</p>";
-      return;
-    }
-
-    if (!Array.isArray(data) || data.length === 0) {
-      container.innerHTML = "<p style='color:#9CA3AF;'>You don’t have any saved picks yet. Visit a pool to make your first entry.</p>";
-      return;
-    }
-
-    const items = data.map(entry => {
-      const pool = (window.POOLKINGS_POOLS || []).find(p => p.id === entry.poolId);
-      const poolTitle = pool ? pool.title : `Pool #${entry.poolId}`;
-      const matchup = pool ? `${pool.awayTeam} @ ${pool.homeTeam}` : "";
-      return `
-        <div class="card" style="margin-bottom:12px;">
-          <h3>${poolTitle}</h3>
-          <p class="card-meta">${matchup}</p>
-          <p class="card-meta">Winner: <strong>${entry.winner}</strong></p>
-          <p class="card-meta">Total: <strong>${entry.total}</strong></p>
-          <p class="card-meta">First to score: <strong>${entry.firstToScore}</strong></p>
-          <p class="card-meta">Locked: ${new Date(entry.timestamp).toLocaleString()}</p>
-        </div>
-      `;
-    }).join("");
-
-    container.innerHTML = items;
-  });
-</script>
 </body>
 </html>
