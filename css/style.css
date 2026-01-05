@@ -1,7 +1,7 @@
 /* =========================================================
-   POOLKINGS — PRODUCTION STYLE SHEET (PROLINE COMPACT EDITION)
+   POOLKINGS — PRODUCTION STYLE SHEET (PROLINE COMPACT + PILL NAV)
    Mobile‑first, sportsbook‑grade UI
-   Compact markets, no horizontal scroll, bright palette
+   Compact markets, centered layout, pill navigation
    ========================================================= */
 
 /* =========================================================
@@ -38,16 +38,16 @@ a:hover {
 }
 
 /* =========================================================
-   SITE HEADER
+   PILL NAVIGATION (SCROLLABLE)
    ========================================================= */
 
 .site-header {
   background: #020617;
   border-bottom: 1px solid #111827;
-  padding: 16px 24px;
+  padding: 16px 16px 10px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .logo {
@@ -57,18 +57,39 @@ a:hover {
   color: #F59E0B;
 }
 
+/* Scrollable pill nav row */
+.main-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.main-nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pill style */
 .main-nav a {
-  margin-left: 16px;
-  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #4B5563;
   color: #E5E7EB;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.main-nav a.active {
-  color: #F59E0B;
-  font-weight: 600;
-}
-
+/* Hover */
 .main-nav a:hover {
+  border-color: #9CA3AF;
+}
+
+/* Active pill — thicker border */
+.main-nav a.active {
+  border-width: 2px;
+  border-color: #F59E0B;
   color: #FBBF24;
 }
 
@@ -93,96 +114,19 @@ a:hover {
 }
 
 /* =========================================================
-   HERO SECTIONS
-   ========================================================= */
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 32px;
-  align-items: center;
-  padding: 32px 0;
-}
-
-.hero-main h1 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-}
-
-.hero-main p {
-  color: #9CA3AF;
-  max-width: 540px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(245, 158, 11, 0.12);
-  color: #FBBF24;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  margin-bottom: 12px;
-}
-
-.btn-row {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-}
-
-.btn-primary,
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-size: 0.95rem;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: #F59E0B;
-  color: #111827;
-  border-color: #F59E0B;
-}
-
-.btn-primary:hover {
-  background: #FBBF24;
-  border-color: #FBBF24;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #E5E7EB;
-  border-color: #4B5563;
-}
-
-.btn-secondary:hover {
-  border-color: #9CA3AF;
-}
-
-.hero-card {
-  background: radial-gradient(circle at top, #1F2937 0, #020617 60%);
-  border-radius: 16px;
-  padding: 20px;
-  border: 1px solid #1F2937;
-}
-
-/* =========================================================
-   POOLS LIST PAGE
+   CENTERED POOLS LIST PAGE
    ========================================================= */
 
 .pools-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 20px;
+  margin: 20px auto 0;
+  max-width: 480px;
+  width: 100%;
 }
 
+/* Pool card */
 .pool-card {
   background: #0B1120;
   border-radius: 12px;
@@ -205,13 +149,9 @@ a:hover {
   color: #F3F4F6;
 }
 
-.pool-card-meta {
-  font-size: 14px;
-  color: #9CA3AF;
-}
-
+.pool-card-meta,
 .pool-card-deadline {
-  font-size: 13px;
+  font-size: 14px;
   color: #9CA3AF;
 }
 
@@ -231,6 +171,37 @@ a:hover {
 
 .pool-card-button:hover {
   background: #22D96A;
+}
+
+/* =========================================================
+   CENTERED SIGNUP BLOCK
+   ========================================================= */
+
+.signup-block {
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.signup-block input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #0B1120;
+  color: #E5E7EB;
+  margin-top: 10px;
+}
+
+.signup-block button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #1CC85A;
+  border: none;
+  border-radius: 8px;
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* =========================================================
@@ -334,7 +305,6 @@ a:hover {
 .team-logo {
   width: 22px;
   height: 22px;
-  vertical-align: middle;
 }
 
 .game-meta {
@@ -406,16 +376,6 @@ a:hover {
   font-weight: 700;
   box-shadow: 0 0 14px rgba(28, 200, 90, 0.55);
   transform: scale(1.03);
-}
-
-/* =========================================================
-   GAME SEPARATOR
-   ========================================================= */
-
-.game-separator {
-  height: 1px;
-  background: #1F2937;
-  margin: 20px 0;
 }
 
 /* =========================================================
@@ -509,36 +469,3 @@ a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .main-nav a {
-    margin-left: 0;
-    margin-right: 12px;
-  }
-
-  .main-content {
-    padding: 16px;
-  }
-
-  .game-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .game-info {
-    margin-bottom: 8px;
-  }
-
-  .game-scroll {
-    width: 100%;
-  }
-}
