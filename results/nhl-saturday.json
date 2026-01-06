@@ -1,0 +1,4 @@
+{
+  "g1": { "winner": "V", "ou": "Over", "first": "H" },
+  "g2": { "winner": "H", "ou": "Under", "first": "V" }
+}
