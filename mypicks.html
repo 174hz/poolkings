@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Picks – PoolKings</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/picks.js" defer></script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-left">
         <div class="logo">
@@ -20,20 +23,26 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="pools-list.html">Pools</a>
-        <a href="my-picks.html" class="active">My Picks</a>
+        <a href="mypicks.html" class="active">My Picks</a>
         <a href="leaderboard.html">Leaderboard</a>
         <a href="rules.html">Official Rules</a>
         <a href="signup.html">Sign Up</a>
     </nav>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="main-content">
 
     <h1>My Picks</h1>
-    <p>Your saved picks will appear here once you join a pool and make selections.</p>
+    <p>Your submitted picks across all pools will appear here.</p>
+
+    <div id="my-picks-container" class="my-picks-container">
+        <!-- JS will populate user's picks here -->
+    </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer class="site-footer">
     <a href="terms.html">Terms</a> •
     <a href="privacy.html">Privacy</a> •
