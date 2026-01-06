@@ -1,53 +1,18 @@
-[
-  {
-    "id": 1,
-    "title": "Saturday Night NHL Spotlight",
-    "sport": "NHL",
-    "league": "NHL",
-    "status": "Live",
-    "deadline": "2026-01-10T19:00:00Z",
-    "games": [
-      {
-        "homeTeam": "Toronto",
-        "awayTeam": "Montreal",
-        "startTime": "Sat 7:00 PM ET",
-        "totalLine": 6.5,
-        "firstToScoreOptions": ["Toronto", "Montreal"]
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Sunday NFL Late Window Picks",
-    "sport": "NFL",
-    "league": "NFL",
-    "status": "Upcoming",
-    "deadline": "2026-01-11T21:25:00Z",
-    "games": [
-      {
-        "homeTeam": "Dallas",
-        "awayTeam": "San Francisco",
-        "startTime": "Sun 4:25 PM ET",
-        "totalLine": 47.5,
-        "firstToScoreOptions": ["Dallas", "San Francisco"]
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Primetime NBA Total & First Bucket",
-    "sport": "NBA",
-    "league": "NBA",
-    "status": "Upcoming",
-    "deadline": "2026-01-12T01:30:00Z",
-    "games": [
-      {
-        "homeTeam": "Lakers",
-        "awayTeam": "Warriors",
-        "startTime": "Sun 8:30 PM ET",
-        "totalLine": 231.5,
-        "firstToScoreOptions": ["Lakers", "Warriors"]
-      }
-    ]
-  }
-]
+{
+  "id": "nhl-saturday",
+  "title": "NHL Saturday",
+  "games": [
+    {
+      "id": "g1",
+      "visitor": "Bruins",
+      "home": "Jets",
+      "overUnder": 6.5
+    },
+    {
+      "id": "g2",
+      "visitor": "Leafs",
+      "home": "Oilers",
+      "overUnder": 7.0
+    }
+  ]
+}
