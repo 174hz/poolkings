@@ -1,62 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pool Details – PoolKings</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Your existing JS for rendering a single pool -->
-    <script src="js/pools.js" defer></script>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header class="site-header">
-    <div class="header-left">
-        <div class="logo">
-            POOLKIN<span class="crown">👑</span>GS
-        </div>
-    </div>
-
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pools-list.html" class="active">Pools</a>
-        <a href="mypicks.html">My Picks</a>
-        <a href="leaderboard.html">Leaderboard</a>
-        <a href="rules.html">Official Rules</a>
-        <a href="signup.html">Sign Up</a>
-    </nav>
-</header>
-
-<!-- MAIN CONTENT -->
 <div class="main-content">
 
     <h1 id="pool-title">Loading pool...</h1>
 
-    <p id="pool-description"></p>
-
-    <div id="games-container" class="games-container">
-        <!-- JS will populate game pick options here -->
+    <div id="pool-card" class="pool-card">
+        <!-- JS will inject all game rows here -->
     </div>
 
-    <button id="submit-picks" class="pool-card-button" style="margin-top: 20px;">
+    <button id="submit-picks" class="submit-button">
         Submit Picks
     </button>
 
 </div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-    <a href="terms.html">Terms</a> •
-    <a href="privacy.html">Privacy</a> •
-    <a href="rules.html">Official Rules</a>
-    <br />
-    © 2026 PoolKings. All rights reserved.
-</footer>
-
-</body>
-</html>
