@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard – PoolKings</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-left">
         <div class="logo">
@@ -20,20 +22,38 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="pools-list.html">Pools</a>
-        <a href="my-picks.html">My Picks</a>
+        <a href="mypicks.html">My Picks</a>
         <a href="leaderboard.html" class="active">Leaderboard</a>
         <a href="rules.html">Official Rules</a>
         <a href="signup.html">Sign Up</a>
     </nav>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="main-content">
 
     <h1>Leaderboard</h1>
-    <p>Top performers across all active pools will appear here.</p>
+    <p>Top performers across all pools.</p>
+
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Correct Picks</th>
+                <th>Accuracy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>SportsGuru21</td><td>87</td><td>78%</td></tr>
+            <tr><td>2</td><td>PickMaster</td><td>82</td><td>74%</td></tr>
+            <tr><td>3</td><td>IceColdPicks</td><td>79</td><td>72%</td></tr>
+        </tbody>
+    </table>
 
 </div>
 
+<!-- FOOTER -->
 <footer class="site-footer">
     <a href="terms.html">Terms</a> •
     <a href="privacy.html">Privacy</a> •
@@ -44,4 +64,3 @@
 
 </body>
 </html>
-
