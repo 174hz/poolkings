@@ -1,102 +1,171 @@
-// Load pool JSON
-async function loadPool() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const poolId = urlParams.get("id");
+ async function loadPool() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const poolId = urlParams.get("id");
 
+  if (!poolId) {
+    document.getElementById("pool-title").textContent = "Pool not found";
+    return;
+  }
+
+  try {
     const response = await fetch(`pools/${poolId}.json`);
+    if (!response.ok) throw new Error("Pool file not found");
     const pool = await response.json();
 
-    document.getElementById("pool-title").textContent = pool.title;
+    renderPool(pool);
+    restorePicks(pool.id);
+  } catch (err) {
+    document.getElementById("pool-title").textContent = "Pool not found";
+    console.error(err);
+  }
+}
 
-    const container = document.getElementById("pool-card");
-    container.innerHTML = "";
+function renderPool(pool) {
+  const titleEl = document.getElementById("pool-title");
+  const metaEl = document.getElementById("pool-meta");
+  const cardEl = document.getElementById("pool-card");
 
-    let gameNumber = 1;
+  titleEl.textContent = pool.title || "Pool";
+  metaEl.textContent = pool.description || "";
 
-    pool.games.forEach(game => {
-        const row = document.createElement("div");
-        row.className = "game-row";
-        row.dataset.gameId = game.id;
+  cardEl.innerHTML = "";
 
-        row.innerHTML = `
-            <span class="game-number">${gameNumber}.</span>
+  let gameNumber = 1;
 
-            <span class="matchup">
-                ${game.visitor} (V) @ ${game.home} (H)
-            </span>
+  (pool.games || []).forEach((game) => {
+    const row = document.createElement("div");
+    row.className = "game-row";
+    row.dataset.gameId = game.id;
 
-            <span class="prop">
-                Winner:
-                <button class="pill" data-prop="winner" data-value="V">V</button>
-                <button class="pill" data-prop="winner" data-value="H">H</button>
-            </span>
+    const ouLine = game.overUnder != null ? game.overUnder : "-";
 
-            <span class="prop">
-                O/U ${game.overUnder}:
-                <button class="pill" data-prop="ou" data-value="Over">O</button>
-                <button class="pill" data-prop="ou" data-value="Under">U</button>
-            </span>
+    row.innerHTML = `
+      <span class="game-number">${gameNumber}.</span>
 
-            <span class="prop">
-                1st Score:
-                <button class="pill" data-prop="first" data-value="V">V</button>
-                <button class="pill" data-prop="first" data-value="H">H</button>
-            </span>
-        `;
+      <span class="matchup">
+        ${game.visitor} (V) @ ${game.home} (H)
+      </span>
 
-        container.appendChild(row);
-        gameNumber++;
+      <span class="prop">
+        Winner:
+        <button class="pick-option" data-prop="winner" data-value="V">V</button>
+        <button class="pick-option" data-prop="winner" data-value="H">H</button>
+      </span>
+
+      <span class="prop">
+        O/U ${ouLine}:
+        <button class="pick-option" data-prop="ou" data-value="Over">O</button>
+        <button class="pick-option" data-prop="ou" data-value="Under">U</button>
+      </span>
+
+      <span class="prop">
+        1st Score:
+        <button class="pick-option" data-prop="first" data-value="V">V</button>
+        <button class="pick-option" data-prop="first" data-value="H">H</button>
+      </span>
+    `;
+
+    cardEl.appendChild(row);
+    gameNumber++;
+  });
+
+  enablePickLogic(pool.id);
+}
+
+function enablePickLogic(poolId) {
+  const buttons = document.querySelectorAll(".pick-option");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest(".game-row");
+      const prop = btn.dataset.prop;
+
+      row.querySelectorAll(`.pick-option[data-prop="${prop}"]`)
+        .forEach((b) => b.classList.remove("selected"));
+
+      btn.classList.add("selected");
+
+      savePicks(poolId);
     });
+  });
 
-    enablePillLogic(pool.id);
+  const submitBtn = document.getElementById("submit-picks");
+  submitBtn.addEventListener("click", () => {
+    savePicks(poolId);
+    showToast("Your picks have been submitted.");
+  });
+}
+
+function savePicks(poolId) {
+  const rows = document.querySelectorAll(".game-row");
+  const picks = {};
+
+  rows.forEach((row) => {
+    const gameId = row.dataset.gameId;
+    picks[gameId] = {
+      winner:
+        row.querySelector('.pick-option[data-prop="winner"].selected')
+          ?.dataset.value || null,
+      ou:
+        row.querySelector('.pick-option[data-prop="ou"].selected')
+          ?.dataset.value || null,
+      first:
+        row.querySelector('.pick-option[data-prop="first"].selected')
+          ?.dataset.value || null,
+    };
+  });
+
+  localStorage.setItem(`picks-${poolId}`, JSON.stringify(picks));
+}
+
+function restorePicks(poolId) {
+  const stored = localStorage.getItem(`picks-${poolId}`);
+  if (!stored) return;
+
+  let picks;
+  try {
+    picks = JSON.parse(stored);
+  } catch {
+    return;
+  }
+
+  Object.entries(picks).forEach(([gameId, gamePicks]) => {
+    const row = document.querySelector(`.game-row[data-game-id="${gameId}"]`);
+    if (!row) return;
+
+    if (gamePicks.winner) {
+      const btn = row.querySelector(
+        `.pick-option[data-prop="winner"][data-value="${gamePicks.winner}"]`
+      );
+      if (btn) btn.classList.add("selected");
+    }
+
+    if (gamePicks.ou) {
+      const btn = row.querySelector(
+        `.pick-option[data-prop="ou"][data-value="${gamePicks.ou}"]`
+      );
+      if (btn) btn.classList.add("selected");
+    }
+
+    if (gamePicks.first) {
+      const btn = row.querySelector(
+        `.pick-option[data-prop="first"][data-value="${gamePicks.first}"]`
+      );
+      if (btn) btn.classList.add("selected");
+    }
+  });
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.classList.add("hidden");
+  }, 2000);
 }
 
 loadPool();
-
-
-// Pill selection + storage
-function enablePillLogic(poolId) {
-    const pills = document.querySelectorAll(".pill");
-
-    pills.forEach(pill => {
-        pill.addEventListener("click", () => {
-            const row = pill.closest(".game-row");
-            const prop = pill.dataset.prop;
-            const value = pill.dataset.value;
-
-            // Unselect siblings
-            row.querySelectorAll(`.pill[data-prop="${prop}"]`)
-                .forEach(p => p.classList.remove("selected"));
-
-            // Select clicked pill
-            pill.classList.add("selected");
-
-            savePick(poolId);
-        });
-    });
-}
-
-
-// Save picks to localStorage
-function savePick(poolId) {
-    const rows = document.querySelectorAll(".game-row");
-    const picks = {};
-
-    rows.forEach(row => {
-        const gameId = row.dataset.gameId;
-
-        picks[gameId] = {
-            winner: row.querySelector('.pill[data-prop="winner"].selected')?.dataset.value || null,
-            ou: row.querySelector('.pill[data-prop="ou"].selected')?.dataset.value || null,
-            first: row.querySelector('.pill[data-prop="first"].selected')?.dataset.value || null
-        };
-    });
-
-    localStorage.setItem(`picks-${poolId}`, JSON.stringify(picks));
-}
-
-
-// Submit button
-document.getElementById("submit-picks").addEventListener("click", () => {
-    alert("Your picks have been submitted!");
-});
