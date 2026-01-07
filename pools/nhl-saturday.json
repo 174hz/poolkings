@@ -1,1 +1,22 @@
+{
+  "id": "nhl-saturday",
+  "title": "NHL Saturday Full Slate",
+  "description": "14-game NHL Saturday pool",
+  "games": [
+    { "id": "g1",  "visitor": "Penguins",    "home": "Red Wings",    "overUnder": 6.5 },
+    { "id": "g2",  "visitor": "Canadiens",   "home": "Bruins",       "overUnder": 6.0 },
+    { "id": "g3",  "visitor": "Maple Leafs", "home": "Senators",     "overUnder": 6.5 },
+    { "id": "g4",  "visitor": "Rangers",     "home": "Islanders",    "overUnder": 5.5 },
+    { "id": "g5",  "visitor": "Sabres",      "home": "Blue Jackets", "overUnder": 6.5 },
+    { "id": "g6",  "visitor": "Flyers",      "home": "Oilers",       "overUnder": 7.0 },
+    { "id": "g7",  "visitor": "Lightning",   "home": "Sharks",       "overUnder": 6.0 },
+    { "id": "g8",  "visitor": "Blackhawks",  "home": "Capitals",     "overUnder": 6.0 },
+    { "id": "g9",  "visitor": "Avalanche",   "home": "Hurricanes",   "overUnder": 6.5 },
+    { "id": "g10", "visitor": "Jets",        "home": "Flames",       "overUnder": 6.0 },
+    { "id": "g11", "visitor": "Canucks",     "home": "Predators",    "overUnder": 6.0 },
+    { "id": "g12", "visitor": "Kings",       "home": "Golden Knights","overUnder": 6.5 },
+    { "id": "g13", "visitor": "Stars",       "home": "Wild",         "overUnder": 6.0 },
+    { "id": "g14", "visitor": "Ducks",       "home": "Coyotes",      "overUnder": 5.5 }
+  ]
+}
 
