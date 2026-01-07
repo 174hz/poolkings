@@ -1,1 +1,26 @@
+{
+  "poolId": "nhl-saturday",
+  "leaderboard": [
+    { "rank": 1,  "userId": "u1",  "username": "lamar",   "score": 11 },
+    { "rank": 2,  "userId": "u2",  "username": "messi",   "score": 10 },
+    { "rank": 3,  "userId": "u3",  "username": "jiggy",   "score": 10 },
+    { "rank": 4,  "userId": "u4",  "username": "steez",   "score": 9 },
+    { "rank": 5,  "userId": "u5",  "username": "ningja",  "score": 9 },
+    { "rank": 6,  "userId": "u6",  "username": "buju",    "score": 8 },
+    { "rank": 7,  "userId": "u7",  "username": "skilli",  "score": 8 },
+    { "rank": 8,  "userId": "u8",  "username": "vibez",   "score": 8 },
+    { "rank": 9,  "userId": "u9",  "username": "bucky",   "score": 7 },
+    { "rank": 10, "userId": "u10", "username": "diggler", "score": 7 },
+    { "rank": 11, "userId": "u11", "username": "dingler", "score": 7 },
+    { "rank": 12, "userId": "u12", "username": "choppa",  "score": 6 },
+    { "rank": 13, "userId": "u13", "username": "nardo",   "score": 6 },
+    { "rank": 14, "userId": "u14", "username": "gully",   "score": 6 },
+    { "rank": 15, "userId": "u15", "username": "burro",   "score": 5 },
+    { "rank": 16, "userId": "u16", "username": "bungi",   "score": 5 },
+    { "rank": 17, "userId": "u17", "username": "benji",   "score": 4 },
+    { "rank": 18, "userId": "u18", "username": "hawkman", "score": 4 },
+    { "rank": 19, "userId": "u19", "username": "jigga",   "score": 3 },
+    { "rank": 20, "userId": "u20", "username": "vibez2",  "score": 2 }
+  ]
+}
 
