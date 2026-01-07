@@ -1,4 +1,16 @@
 {
-  "g1": { "winner": "V", "ou": "Over", "first": "H" },
-  "g2": { "winner": "H", "ou": "Under", "first": "V" }
+  "g1":  { "winner": "H", "ou": "Over",  "first": "V" },
+  "g2":  { "winner": "H", "ou": "Under", "first": "H" },
+  "g3":  { "winner": "V", "ou": "Over",  "first": "V" },
+  "g4":  { "winner": "H", "ou": "Under", "first": "H" },
+  "g5":  { "winner": "H", "ou": "Over",  "first": "H" },
+  "g6":  { "winner": "V", "ou": "Over",  "first": "V" },
+  "g7":  { "winner": "V", "ou": "Under", "first": "H" },
+  "g8":  { "winner": "H", "ou": "Under", "first": "H" },
+  "g9":  { "winner": "V", "ou": "Over",  "first": "V" },
+  "g10": { "winner": "H", "ou": "Under", "first": "H" },
+  "g11": { "winner": "V", "ou": "Over",  "first": "V" },
+  "g12": { "winner": "H", "ou": "Over",  "first": "H" },
+  "g13": { "winner": "V", "ou": "Under", "first": "V" },
+  "g14": { "winner": "H", "ou": "Under", "first": "H" }
 }
