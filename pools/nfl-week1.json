@@ -1,9 +1,8 @@
 [
-  { "home": "Rams", "away": "Panthers" },
-  { "home": "Bears", "away": "Packers" },
-  { "home": "Jaguars", "away": "Bills" },
-  { "home": "49ers", "away": "Eagles" },
-  { "home": "Chargers", "away": "Patriots" },
-  { "home": "Texans", "away": "Steelers" }
+  { "league": "nfl", "home": "Rams", "away": "Panthers" },
+  { "league": "nfl", "home": "Bears", "away": "Packers" },
+  { "league": "nfl", "home": "Jaguars", "away": "Bills" },
+  { "league": "nfl", "home": "49ers", "away": "Eagles" },
+  { "league": "nfl", "home": "Chargers", "away": "Patriots" },
+  { "league": "nfl", "home": "Texans", "away": "Steelers" }
 ]
-
