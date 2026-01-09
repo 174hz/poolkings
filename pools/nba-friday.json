@@ -1,1 +1,8 @@
-
+[
+  { "home": "Raptors", "away": "Celtics" },
+  { "home": "Pelicans", "away": "Wizards" },
+  { "home": "76ers", "away": "Magic" },
+  { "home": "Clippers", "away": "Nets" },
+  { "home": "Thunder", "away": "Grizzlies" },
+  { "home": "Knicks", "away": "Suns" }
+]
