@@ -471,3 +471,59 @@ a:hover {
   }
 }
 
+/* POOLS LIST CARDS */
+.pool-card-list {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  border: 1px solid #e5e5e5;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pool-card-list:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.pool-card-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.pool-card-list-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.pool-card-list-league {
+  font-size: 0.9rem;
+  background: #f3f3f3;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.pool-card-list-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.pool-card-list-button {
+  display: inline-block;
+  background: #1db954;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.pool-card-list-button:hover {
+  background: #17a347;
+}
