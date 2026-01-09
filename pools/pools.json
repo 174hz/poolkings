@@ -1,0 +1,23 @@
+[
+  {
+    "id": "nhl-saturday",
+    "title": "NHL Saturday",
+    "league": "NHL",
+    "deadline": "2026-01-10T19:00:00",
+    "games": [1, 2, 3]
+  },
+  {
+    "id": "nba-friday",
+    "title": "NBA Friday",
+    "league": "NBA",
+    "deadline": "2026-01-09T19:00:00",
+    "games": [1, 2]
+  },
+  {
+    "id": "nfl-week1",
+    "title": "NFL Week 1",
+    "league": "NFL",
+    "deadline": "2026-01-12T13:00:00",
+    "games": [1, 2, 3, 4]
+  }
+]
